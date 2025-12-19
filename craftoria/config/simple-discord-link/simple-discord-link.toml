@@ -94,7 +94,7 @@
 	#Should messages sent with TellRaw be sent to discord as a chat? (Experimental)
 	relayTellRaw = true
 	#Should the entire command executed be relayed to discord, or only the name of the command
-	relayFullCommands = false
+	relayFullCommands = true
 	#Should messages from bots be relayed
 	ignoreBots = true
 	#Compatibility with PluralKit (can introduce a very slight delay in messages being sent from Discord to Minecraft)
@@ -246,7 +246,7 @@
 	#Control where COMMAND messages are delivered
 	[messageDestinations.commands]
 		#The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
-		channel = "EVENT"
+		channel = "CONSOLE"
 		#Should the message be sent using EMBED style messages
 		useEmbed = false
 		#Embed Layout to use

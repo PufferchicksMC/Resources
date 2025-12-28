@@ -21,6 +21,6 @@ emi-loot:LNBoaKYt
 emi-ores:1jY6MIrK
 etched:MFq0jvUW
 hooked:Jwdpo3CR
-mech-trowel:idzymFGn
+mech-trowel:jXStR8CX
 refined-storage-emi-integration:zpz6Pcxn
 tectonic:fTPmbv20

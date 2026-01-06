@@ -103,7 +103,23 @@ file = "kubejs/server_scripts/puffercoin_recipes.js"
 file = "kubejs/startup_scripts/puffercoin.js"
 
 [[files]]
+file = "mods/bluemap.pw.toml"
+metafile = true
+
+[[files]]
 file = "mods/charm-of-undying.pw.toml"
+metafile = true
+
+[[files]]
+file = "mods/chunky.pw.toml"
+metafile = true
+
+[[files]]
+file = "mods/chunkyborder.pw.toml"
+metafile = true
+
+[[files]]
+file = "mods/craterlib.pw.toml"
 metafile = true
 
 [[files]]
@@ -147,6 +163,18 @@ file = "mods/librarianlib.pw.toml"
 metafile = true
 
 [[files]]
+file = "mods/log-begone.pw.toml"
+metafile = true
+
+[[files]]
+file = "mods/lootjs.pw.toml"
+metafile = true
+
+[[files]]
+file = "mods/luckperms.pw.toml"
+metafile = true
+
+[[files]]
 file = "mods/mech-trowel.pw.toml"
 metafile = true
 
@@ -156,4 +184,12 @@ metafile = true
 
 [[files]]
 file = "mods/sculk-muffler.pw.toml"
+metafile = true
+
+[[files]]
+file = "mods/sdlink.pw.toml"
+metafile = true
+
+[[files]]
+file = "mods/tectonic.pw.toml"
 metafile = true

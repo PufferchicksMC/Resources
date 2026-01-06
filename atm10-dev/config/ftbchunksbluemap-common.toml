@@ -1,0 +1,17 @@
+#Enable/disable FTB Chunks integration for BlueMap.
+#If true, claimed chunks will be displayed on the map.
+#Default: true
+ftbChunksEnabled = true
+#How often to periodically update chunk claims on BlueMap, in milliseconds.
+#Lower values update faster but may increase server load.
+#Default: 60000 (1 minute)
+# Default: 60000
+# Range: > 5000
+claimUpdateIntervalMs = 60000
+#How long to wait after server start before loading claims, in milliseconds.
+#This delay allows FTB Chunks to fully initialize and load saved claim data.
+#Increase this value if claims don't show up on server restart.
+#Default: 3000 (3 seconds)
+# Default: 3000
+# Range: 1000 ~ 60000
+startupDelayMs = 60000

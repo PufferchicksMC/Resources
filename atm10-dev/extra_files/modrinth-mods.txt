@@ -1,0 +1,32 @@
+# Server essentials
+bluemap:8iJcPOHJ
+chunky:LuFhm4eU
+chunkyborder:Pj0tqKnE
+log-begone:1OrkaiPD
+luckperms:dKAPoPGd
+sdlink:VADIv5pg
+
+# Community mods
+create-additional-logistics:mbCi448E
+echo-of-death:HdyZLCDq
+#freeze-block:WfL7dS4O
+sculk-muffler:pBOUMY5q
+
+# Server+Client Additions
+charm-of-undying:bfg1ghkD
+create-ultimine:66tIOKDZ
+#distanthorizons:bLPLghy9
+elytra-slot:RX6A02W1
+emi:ouSj7NfF
+emi-loot:LNBoaKYt
+emi-ores:1jY6MIrK
+etched:MFq0jvUW
+hooked:Jwdpo3CR
+mech-trowel:jXStR8CX
+refined-storage-emi-integration:zpz6Pcxn
+tectonic:fTPmbv20
+
+# Dependencies
+craterlib:cBhYL3vy
+librarianlib:cjdV1zT2
+lootjs:MqNlbKZc

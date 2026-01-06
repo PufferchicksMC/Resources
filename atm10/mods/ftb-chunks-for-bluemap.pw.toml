@@ -1,0 +1,13 @@
+name = "Chunks for BlueMap"
+filename = "ftbchunksbluemap-1.1.1.jar"
+side = "server"
+
+[download]
+hash-format = "sha1"
+hash = "aea4b630549832b16868c9837287a99e26a82567"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7300527
+project-id = 1279218

@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+
+# Build output of packwiz curseforge export
+*.zip
+!resourcepacks/*.zip
+
+# Build output of packwiz modrinth export
+*.mrpack
+
+# Development only
+.envrc

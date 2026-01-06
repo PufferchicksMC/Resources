@@ -1,6 +1,34 @@
 hash-format = "sha256"
 
 [[files]]
+file = "bluemap/mariadb-java-client-3-5-4-jar.pw.toml"
+metafile = true
+
+[[files]]
+file = "bluemap/web/assets/world.png"
+
+[[files]]
+file = "bluemap/web/assets/world_the_end.png"
+
+[[files]]
+file = "bluemap/web/assets/world_the_nether.png"
+
+[[files]]
+file = "bluemap/web/css/far-player-names.css"
+
+[[files]]
+file = "bluemap/web/css/map-icons.css"
+
+[[files]]
+file = "bluemap/web/js/follow-player.js"
+
+[[files]]
+file = "bluemap/web/js/map-icons.js"
+
+[[files]]
+file = "bluemap/web/sql.php"
+
+[[files]]
 file = "config/bluemap/core.conf"
 
 [[files]]
@@ -152,6 +180,10 @@ metafile = true
 
 [[files]]
 file = "mods/etched.pw.toml"
+metafile = true
+
+[[files]]
+file = "mods/ftb-chunks-for-bluemap.pw.toml"
 metafile = true
 
 [[files]]

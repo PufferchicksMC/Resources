@@ -199,6 +199,10 @@ file = "mods/immersive-paintings.pw.toml"
 metafile = true
 
 [[files]]
+file = "mods/leaderboards.pw.toml"
+metafile = true
+
+[[files]]
 file = "mods/librarianlib.pw.toml"
 metafile = true
 

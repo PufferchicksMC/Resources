@@ -1,10 +1,32 @@
 const CONFIG = {
   arenaRadius: 500,
   arenaCooldown: 7,
-  waystoneRange: 8
+  waystoneRange: 8,
+  islandRadius: 6
 };
 
 const ARENAS = {
+  'n': {
+    pos: { x: 0, y: 110, z: -10000 }
+  },
+  'ne': {
+    pos: { x: 10000, y: 96, z: -10000 }
+  },
+  'e': {
+    pos: { x: 10000, y: 95, z: 0 }
+  },
+  'se': {
+    pos: { x: 10000, y: 95, z: 10000 }
+  },
+  's': {
+    pos: { x: 0, y: 96, z: 10000 }
+  },
+  'sw': {
+    pos: { x: -10000, y: 96, z: 10000 }
+  },
+  'w': {
+    pos: { x: -10000, y: 96, z: 0 }
+  },
   'nw': {
     pos: { x: -10000, y: 96, z: -10000 }
   }
@@ -12,7 +34,35 @@ const ARENAS = {
 
 const WAYSTONES = [
   {
-    pos: { x: -4998, y: 66, z: -4946 },
+    pos: { x: -25, y: 110, z: -4969 },
+    dest: 'n'
+  },
+  {
+    pos: { x: 4983, y: 110, z: -4984 },
+    dest: 'ne'
+  },
+  {
+    pos: { x: 4983, y: 110, z: 7 },
+    dest: 'e'
+  },
+  {
+    pos: { x: 4983, y: 110, z: 4984 },
+    dest: 'se'
+  },
+  {
+    pos: { x: 7, y: 110, z: 4984 },
+    dest: 's'
+  },
+  {
+    pos: { x: -4983, y: 64, z: 4983 },
+    dest: 'sw'
+  },
+  {
+    pos: { x: -4968, y: 110, z: 7 },
+    dest: 'w'
+  },
+  {
+    pos: { x: -4984, y: 110, z: -4985 },
     dest: 'nw'
   }
 ];
@@ -20,7 +70,9 @@ const WAYSTONES = [
 const COOLDOWN_KEY = 'chaos_arena_cooldown';
 const RETURN_KEY = 'chaos_arena_return';
 
+// Utility functions
 const getNearbyWaystone = pos => WAYSTONES.find(waystone => isInRange(waystone.pos, pos));
+const getWaystoneByDest = dest => WAYSTONES.find(waystone => waystone.dest === dest);
 
 const isInRange = (pos1, pos2) =>
   Math.abs(pos1.x - pos2.x) <= CONFIG.waystoneRange &&
@@ -35,7 +87,12 @@ const isInArena = (pos, id) => {
   return Math.sqrt(dx * dx + dz * dz) <= CONFIG.arenaRadius;
 }
 
-const onEnterArena = (server, player, id) => {
+const setBlock = (server, x, y, z, block) => {
+  server.runCommandSilent(`execute in minecraft:the_end run setblock ${x} ${y} ${z} ${block}`);
+}
+
+// Arena entry/exit functions
+function onEnterArena(server, player, id) {
   console.log(`Entering arena: ${id} for player: ${player.username}`);
   player.persistentData.put(RETURN_KEY, {
     arena: id,
@@ -46,26 +103,27 @@ const onEnterArena = (server, player, id) => {
   server.runCommandSilent(`chunky border bypass`);
 }
 
-const enterArena = (server, player, id) => {
+function enterArena(server, player, id) {
   const arena = ARENAS[id];
   onEnterArena(server, player, id);
   server.runCommandSilent(`execute in minecraft:the_end run tp ${player.username} ${arena.pos.x} ${arena.pos.y} ${arena.pos.z}`);
 };
 
-const onExitArena = (server, player) => {
+function onExitArena(server, player) {
   console.log(`Exiting arena for player: ${player.username}`);
   player.persistentData.remove(RETURN_KEY);
   server.runCommandSilent(`chunky border bypass`);
 }
 
-const exitArena = (server, player) => {
+function exitArena(server, player) {
   const returnData = player.persistentData.get(RETURN_KEY);
   if (!returnData?.arena) return;
   onExitArena(server, player);
   server.runCommandSilent(`execute in minecraft:the_end run tp ${player.username} ${returnData.x} ${returnData.y} ${returnData.z}`);
 };
 
-const rightClickWaystone = event => {
+// Waystone interaction handler
+function rightClickWaystone(event) {
   const { player: Player, block: Block, server: Server } = event;
   
   // Verify dimension
@@ -111,6 +169,48 @@ const rightClickWaystone = event => {
   
   // Exit waystone
   exitArena(Server, Player);
+}
+
+// Island generation
+function generateIsland(server, pos) {
+  const materials = ['minecraft:obsidian', 'minecraft:crying_obsidian'];
+
+  // Generate the island
+  console.log(`Generating island at ${pos.x}, ${pos.y}, ${pos.z}`);
+  let x, y, z, radius, radiusSq, distSq, material;
+  for (let dy = 0; dy < 4; dy++) {
+    y = pos.y - dy;
+    radius = Math.max(1, CONFIG.islandRadius - dy);
+    radiusSq = radius * radius;
+    for (let dx = -radius; dx <= radius; dx++) {
+      for (let dz = -radius; dz <= radius; dz++) {
+        distSq = dx * dx + dz * dz;
+        x = pos.x + dx;
+        z = pos.z + dz;
+        material = distSq >= radiusSq ? 'minecraft:air' : materials[Math.floor(Math.random() * materials.length)];
+        setBlock(server, x, y, z, material);
+      }
+    }
+  }
+
+  // Beacon base
+  for (let dx = -1; dx <= 1; dx++) {
+    for (let dz = -1; dz <= 1; dz++) {
+      setBlock(server, pos.x + dx, pos.y - 1, pos.z + dz, 'minecraft:netherite_block');
+    }
+  }
+
+  // Beacon
+  setBlock(server, pos.x, pos.y, pos.z, 'minecraft:beacon{primary_effect:"minecraft:regeneration",secondary_effect:"minecraft:regeneration"}');
+  
+  // Waystone
+  setBlock(server, pos.x, pos.y + 1, pos.z, 'chaos_arena:waystone');
+  
+  // Light sources
+  setBlock(server, pos.x + CONFIG.islandRadius, pos.y + 1, 0, 'minecraft:light[level=15]');
+  setBlock(server, pos.x - CONFIG.islandRadius, pos.y + 1, 0, 'minecraft:light[level=15]');
+  setBlock(server, 0, pos.y + 1, pos.z + CONFIG.islandRadius, 'minecraft:light[level=15]');
+  setBlock(server, 0, pos.y + 1, pos.z - CONFIG.islandRadius, 'minecraft:light[level=15]');
 }
 
 // Handle waystone interaction
@@ -159,6 +259,20 @@ ServerEvents.commandRegistry(event => {
           const server = context.source.server;
           server.persistentData.remove(`${COOLDOWN_KEY}_${id}`);
           context.source.sendSuccess(Text.green(`Reset cooldown for arena: ${id}`), true);
+          return 1;
+        })))
+    .then(Commands.literal('create')
+      .then(Commands.argument('arena', Arguments.STRING.create(event))
+        .executes(context => {
+          const id = Arguments.STRING.getResult(context, 'arena');
+          const waystone = getWaystoneByDest(id);
+          if (!waystone) {
+            context.source.sendFailure(Text.red(`Waystone not found for arena: ${id}`));
+            return 0;
+          }
+          console.log(`Creating island for waystone: ${id}`);
+          generateIsland(context.source.server, waystone.pos);
+          context.source.sendSuccess(Text.green(`Generated island for waystone: ${id}`), true);
           return 1;
         }))));
 });

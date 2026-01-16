@@ -172,6 +172,10 @@ file = "mods/bluemap.pw.toml"
 metafile = true
 
 [[files]]
+file = "mods/c2me-neoforge.pw.toml"
+metafile = true
+
+[[files]]
 file = "mods/charm-of-undying.pw.toml"
 metafile = true
 

@@ -96,11 +96,16 @@ const setBlock = (server, x, y, z, block) => {
 // Arena entry/exit functions
 function onEnterArena(server, player, id) {
   console.log(`Entering arena: ${id} for player: ${player.username}`);
-  player.persistentData.put(RETURN_KEY, {
-    arena: id,
-    x: player.x,
-    y: player.y,
-    z: player.z
+  let x = player.x;
+  let y = player.y;
+  let z = player.z;
+  server.scheduleInTicks(100, () => {
+    player.persistentData.put(RETURN_KEY, {
+      arena: id,
+      x: x,
+      y: y,
+      z: z
+    });
   });
   server.runCommandSilent(`chunky border bypass`);
 }

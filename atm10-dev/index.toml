@@ -319,6 +319,18 @@ file = "config/bluemap/packs/bluemap-x-minecolonies.pw.toml"
 metafile = true
 
 [[files]]
+file = "config/bluemap/packs/chaos_arena/assets/chaos_arena/blockstates/waystone.json"
+
+[[files]]
+file = "config/bluemap/packs/chaos_arena/assets/chaos_arena/models/block/waystone.json"
+
+[[files]]
+file = "config/bluemap/packs/chaos_arena/assets/chaos_arena/models/item/waystone.json"
+
+[[files]]
+file = "config/bluemap/packs/chaos_arena/assets/chaos_arena/textures/block/waystone.png"
+
+[[files]]
 file = "config/bluemap/packs/createentityaddon.pw.toml"
 metafile = true
 

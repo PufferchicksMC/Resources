@@ -1,0 +1,6 @@
+[submodule "atm10-dev/config/bluemap/packs/BluemapCreateEntityAddon"]
+	path = atm10-dev/config/bluemap/packs/BluemapCreateEntityAddon
+	url = https://github.com/BeneHenke/BluemapCreateEntityAddon.git
+[submodule "atm10-dev/config/bluemap/packs/BluemapCreateResourcePack"]
+	path = atm10-dev/config/bluemap/packs/BluemapCreateResourcePack
+	url = https://github.com/Uiniel/BlueMap-Create-Resource-Pack.git

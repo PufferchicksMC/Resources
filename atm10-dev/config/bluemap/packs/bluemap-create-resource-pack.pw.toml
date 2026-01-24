@@ -1,5 +1,5 @@
 name = "Bluemap-Create-Resource-Pack"
-filename = "main.zip"
+filename = "bluemap-create-resource-pack.zip"
 side = "server"
 
 [download]

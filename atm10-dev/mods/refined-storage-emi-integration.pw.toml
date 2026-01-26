@@ -1,7 +1,6 @@
 name = "Refined Storage - EMI Integration"
 filename = "refinedstorage-emi-integration-neoforge-1.0.0.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/TCSDwmbf/versions/zpz6Pcxn/refinedstorage-emi-integration-neoforge-1.0.0.jar"

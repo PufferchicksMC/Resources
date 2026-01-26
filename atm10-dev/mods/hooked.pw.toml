@@ -1,7 +1,6 @@
 name = "Hooked"
 filename = "hooked-neoforge-2.0.2.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/RoLsCIqN/versions/Jwdpo3CR/hooked-neoforge-2.0.2.jar"

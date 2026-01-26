@@ -1,7 +1,6 @@
 name = "EMI Ores"
 filename = "emi_ores-1.2+1.21.1+neoforge.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/sG4TqDb8/versions/1jY6MIrK/emi_ores-1.2%2B1.21.1%2Bneoforge.jar"

@@ -1,7 +1,6 @@
 name = "EMI Loot"
 filename = "emi_loot-0.7.8+1.21+neoforge.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/qbbO7Jns/versions/LNBoaKYt/emi_loot-0.7.8%2B1.21%2Bneoforge.jar"

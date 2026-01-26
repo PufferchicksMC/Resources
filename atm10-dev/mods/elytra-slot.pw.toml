@@ -1,7 +1,6 @@
 name = "Elytra Slot"
 filename = "elytraslot-neoforge-9.0.2+1.21.1.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/mSQF1NpT/versions/RX6A02W1/elytraslot-neoforge-9.0.2%2B1.21.1.jar"

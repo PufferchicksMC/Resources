@@ -1,7 +1,6 @@
 name = "LibrarianLib"
 filename = "librarianlib-5.0.0-neoforge.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/9uQhkMe5/versions/cjdV1zT2/librarianlib-5.0.0-neoforge.jar"

@@ -1,7 +1,6 @@
 name = "Etched"
 filename = "etched-5.0.0.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/zi3Fnfmc/versions/MFq0jvUW/etched-5.0.0.jar"

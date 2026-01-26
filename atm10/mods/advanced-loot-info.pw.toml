@@ -1,7 +1,6 @@
 name = "Advanced Loot Info"
 filename = "AdvancedLootInfo-neoforge-1.21.1-1.6.0.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/PEPVViac/versions/opzrnOKI/AdvancedLootInfo-neoforge-1.21.1-1.6.0.jar"

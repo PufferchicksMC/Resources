@@ -1,7 +1,6 @@
 name = "Mech Trowel"
 filename = "mechtrowel-1.2.12.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/nqFNRALS/versions/RsuF29Oi/mechtrowel-1.2.12.jar"

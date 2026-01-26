@@ -1,7 +1,6 @@
 name = "Echo of Death"
 filename = "kittycatcasey_echoofdeath-1.21.1-1.0.0.jar"
 side = "both"
-pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/p0lx0alG/versions/HdyZLCDq/kittycatcasey_echoofdeath-1.21.1-1.0.0.jar"

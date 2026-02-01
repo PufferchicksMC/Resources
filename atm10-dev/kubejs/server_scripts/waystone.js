@@ -1,6 +1,7 @@
 // Settings
 const ARENA_KEY = 'waystone_arena';
-const COUNTDOWN_KEY = 'arena_countdown';
+const COUNTDOWN_KEY = 'waystone_countdown';
+const TICK_LIMITER_KEY = 'waystone_tick_limiter';
 
 let DEST_TYPES = {
   'default': {
@@ -22,6 +23,18 @@ let DEST_TYPES = {
 
 const waystoneMonitor = { current: null };
 BlockEvents.rightClicked('chaos_arena:waystone', event => rightClickWaystone(event));
+ServerEvents.loaded(event => {
+  const { server } = event;
+  server.scheduleRepeatingInTicks(20, c => {
+    const tickLimiter = server.persistentData.getLong(TICK_LIMITER_KEY) || 0;
+    if (tickLimiter === server.tickCount) {
+      c.clear();
+      return;
+    }
+    server.persistentData.putLong(TICK_LIMITER_KEY, server.tickCount);
+    monitorPlayers(server);
+  });
+});
 
 // Monitor player(s) in arena
 function monitorPlayers(server) {

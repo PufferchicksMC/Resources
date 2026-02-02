@@ -7,3 +7,12 @@
 [submodule "atm10-dev/config/bluemap/packs/Bluemap-x-SophisticatedBackpacks"]
 	path = atm10-dev/config/bluemap/packs/Bluemap-x-SophisticatedBackpacks
 	url = https://github.com/TyBraniff/Bluemap-x-SophisticatedBackpacks.git
+[submodule "atm10/config/bluemap/packs/BluemapCreateEntityAddon"]
+	path = atm10/config/bluemap/packs/BluemapCreateEntityAddon
+	url = https://github.com/BeneHenke/BluemapCreateEntityAddon.git
+[submodule "atm10/config/bluemap/packs/BluemapCreateResourcePack"]
+	path = atm10/config/bluemap/packs/BluemapCreateResourcePack
+	url = https://github.com/Uiniel/BlueMap-Create-Resource-Pack.git
+[submodule "atm10/config/bluemap/packs/Bluemap-x-SophisticatedBackpacks"]
+	path = atm10/config/bluemap/packs/Bluemap-x-SophisticatedBackpacks
+	url = https://github.com/TyBraniff/Bluemap-x-SophisticatedBackpacks.git

@@ -615,10 +615,16 @@ file = "kubejs/server_scripts/puffercoin_loot.js"
 file = "kubejs/server_scripts/puffercoin_recipes.js"
 
 [[files]]
+file = "kubejs/server_scripts/waystone.js"
+
+[[files]]
 file = "kubejs/startup_scripts/chaos_arena.js"
 
 [[files]]
 file = "kubejs/startup_scripts/puffercoin.js"
+
+[[files]]
+file = "kubejs/startup_scripts/waystone.js"
 
 [[files]]
 file = "mods/advanced-loot-info.pw.toml"
@@ -654,6 +660,10 @@ metafile = true
 
 [[files]]
 file = "mods/create-ultimine.pw.toml"
+metafile = true
+
+[[files]]
+file = "mods/distanthorizons.pw.toml"
 metafile = true
 
 [[files]]

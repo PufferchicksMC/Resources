@@ -657,6 +657,10 @@ file = "mods/create-ultimine.pw.toml"
 metafile = true
 
 [[files]]
+file = "mods/distanthorizons.pw.toml"
+metafile = true
+
+[[files]]
 file = "mods/echo-of-death.pw.toml"
 metafile = true
 
